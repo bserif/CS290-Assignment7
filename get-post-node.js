@@ -49,5 +49,5 @@ app.use(function(err, req, res, next){
 });
 
 app.listen(app.get('port'), function(){
-  console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
+  console.log('Express started on http://52.26.37.94:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
