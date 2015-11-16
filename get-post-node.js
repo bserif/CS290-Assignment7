@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 3000);
+app.set('port', 3001);
 
 app.get('/', function(req,res){
 	res.render('homepage');
@@ -20,9 +20,9 @@ app.get('/dataReturn',function(req,res){
   for (var p in req.query){
     namesAndValues.push({'name':p,'value':req.query[p]})
   }
-  var context = {};
-  context.dataList = namesAndValues;
-  res.render('getDataReturn', context);
+  var returns = {};
+  returns.dataList = namesAndValues;
+  res.render('getDataReturn', returns);
 });
 
 
@@ -31,9 +31,9 @@ app.post('/dataReturn', function(req,res){
   for (var p in req.body){
     namesAndValues.push({'name':p,'value':req.body[p]})
   }
-  var context = {};
-  context.dataList = namesAndValues;
-  res.render('postDataReturn', context);
+  var returns = {};
+  returns.dataList = namesAndValues;
+  res.render('postDataReturn', returns);
 });
 
 app.use(function (req, res){
